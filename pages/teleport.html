@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Teleport · Pick a location</title>
+
+  <link rel="stylesheet" href="../libs/leaflet.css" />
+  <style>
+    html, body { height:100%; margin:0; display:flex; flex-direction:column }
+    #mapBox { height:40vh; position:relative; }
+    #map    { height:100%; width:100%; border-bottom:2px solid #f0c36d; }
+
+    #run {
+      position:absolute; top:12px; left:12px; z-index:9999;
+      padding:6px 10px; background:#0b57d0; color:#fff;
+      border:none; border-radius:4px; cursor:pointer;
+      font-family:sans-serif;
+    }
+
+    #results {
+      flex:1; overflow:auto; font:13px/1.4 Arial, sans-serif;
+      padding:10px;
+    }
+    #results h4 { margin:0 0 6px }
+    #results ul { list-style:none; padding:0; margin:0 }
+    #results li { margin-bottom:4px }
+  </style>
+</head>
+<body>
+  <div id="mapBox">
+    <button id="run">Run search here</button>
+    <div id="map"></div>
+  </div>
+
+  <div id="results" hidden>
+    <h4>Ranking list</h4>
+    <ul id="list"></ul>
+  </div>
+
+  <script src="../libs/leaflet.js"></script>
+  <script src="teleport.js"></script>
+</body>
+</html>
